@@ -16,12 +16,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/images/building-render-1.jpg" alt="UIS Office Building Render" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-primary/80" />
-        </div>
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40 text-center">
+      <section className="bg-primary">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40 text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6 max-w-4xl mx-auto">
             {t('hero.title')}
           </h1>
