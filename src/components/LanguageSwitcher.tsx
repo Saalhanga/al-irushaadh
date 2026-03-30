@@ -1,0 +1,34 @@
+import { useLanguage } from '@/i18n/LanguageContext';
+import type { Locale } from '@/i18n/translations';
+
+const languages: { code: Locale; label: string; flag: string }[] = [
+  { code: 'en', label: 'English', flag: '🇬🇧' },
+  { code: 'dv', label: 'ދިވެހި', flag: '🇲🇻' },
+  { code: 'ar', label: 'العربية', flag: '🇸🇦' },
+];
+
+const LanguageSwitcher = () => {
+  const { locale, setLocale } = useLanguage();
+
+  return (
+    <div className="flex items-center gap-1">
+      {languages.map((lang) => (
+        <button
+          key={lang.code}
+          onClick={() => setLocale(lang.code)}
+          className={`px-3 py-1.5 rounded-md text-sm transition-all duration-200 ${
+            locale === lang.code
+              ? 'bg-primary text-primary-foreground'
+              : 'hover:bg-secondary text-foreground'
+          }`}
+          aria-label={`Switch to ${lang.label}`}
+        >
+          <span className="mr-1">{lang.flag}</span>
+          <span className="hidden sm:inline">{lang.label}</span>
+        </button>
+      ))}
+    </div>
+  );
+};
+
+export default LanguageSwitcher;
