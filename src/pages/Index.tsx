@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useDonationProgress } from '@/hooks/use-site-data';
 import DonationProgress from '@/components/DonationProgress';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -7,24 +8,19 @@ import { Building2, Heart, Users } from 'lucide-react';
 
 const Index = () => {
   const { t } = useLanguage();
+  const { data: progress } = useDonationProgress();
 
-  // Placeholder values – will be replaced by Lovable Cloud data
-  const currentSqft = 320;
-  const totalSqft = 1320;
+  const currentSqft = progress?.current_sqft ?? 0;
+  const totalSqft = progress?.total_sqft ?? 1320;
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="/images/building-render-1.jpg"
-            alt="UIS Office Building Render"
-            className="w-full h-full object-cover"
-          />
+          <img src="/images/building-render-1.jpg" alt="UIS Office Building Render" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-primary/80" />
         </div>
-
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40 text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6 max-w-4xl mx-auto">
             {t('hero.title')}
@@ -33,17 +29,14 @@ const Index = () => {
             {t('hero.subtitle')}
           </p>
           <Link to="/sponsor">
-            <Button
-              size="lg"
-              className="text-base px-8 py-6 rounded-lg bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-200 shadow-lg"
-            >
+            <Button size="lg" className="text-base px-8 py-6 rounded-lg bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-200 shadow-lg">
               {t('hero.cta')}
             </Button>
           </Link>
         </div>
       </section>
 
-      {/* Progress Section */}
+      {/* Progress */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
         <Card className="shadow-lg border-0">
           <CardContent className="p-8">
@@ -52,15 +45,12 @@ const Index = () => {
         </Card>
       </section>
 
-      {/* About Section */}
+      {/* About */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-14">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">{t('about.title')}</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed text-lg">
-            {t('about.description')}
-          </p>
+          <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed text-lg">{t('about.description')}</p>
         </div>
-
         <div className="grid md:grid-cols-3 gap-8">
           {[
             { icon: Building2, title: 'Community Hub', desc: 'A central office for organizing community services and programs.' },
@@ -94,21 +84,15 @@ const Index = () => {
               </Link>
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg">
-              <img
-                src="/images/building-render-2.jpg"
-                alt="UIS Office Building Design"
-                className="w-full h-80 object-cover"
-              />
+              <img src="/images/building-render-2.jpg" alt="UIS Office Building Design" className="w-full h-80 object-cover" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-          {t('hero.title')}
-        </h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">{t('hero.title')}</h2>
         <p className="text-muted-foreground mb-8 text-lg">{t('hero.subtitle')}</p>
         <Link to="/sponsor">
           <Button size="lg" className="text-base px-8 py-6 bg-primary text-primary-foreground hover:bg-primary/90">
