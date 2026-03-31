@@ -58,7 +58,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'project.gallery.title': 'Building Design',
 
     // Footer
-    'footer.rights': '© 2024 United Islamic Society. All rights reserved.',
+    'footer.rights': '© 2026 United Islamic Society. All rights reserved.',
     'footer.dua': 'May Allah reward your generosity.',
 
     // Common
@@ -115,7 +115,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'project.sqft.desc': 'ޢިމާރާތުގެ ޖުމްލަ ބޮޑުމިނަކީ 1,320 އަކަފޫޓެވެ. ކޮންމެ އަކަފޫޓެއް 1,320 ރުފިޔާއަށް ސްޕޮންސަރ ކުރެއްވޭނެއެވެ.',
     'project.gallery.title': 'ޢިމާރާތުގެ ޑިޒައިން',
 
-    'footer.rights': '© 2024 ޔުނައިޓެޑް އިސްލާމިކް ސޮސައިޓީ. އެންމެހައި ޙައްޤުތައް ލިބިގެންވޭ.',
+    'footer.rights': '© 2026 ޔުނައިޓެޑް އިސްލާމިކް ސޮސައިޓީ. އެންމެހައި ޙައްޤުތައް ލިބިގެންވޭ.',
     'footer.dua': 'ﷲ ތިޔަ ދީލަތިކަމަށް ހެޔޮ ޖަޒާ ދެއްވާށި.',
 
     'common.donate': 'މިހާރު ހަދިޔާ ކުރައްވާ',
@@ -171,7 +171,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'project.sqft.desc': 'المساحة الإجمالية للمبنى 1,320 قدم مربع. قسّمنا المشروع إلى 1,320 وحدة رعاية متساوية. برعاية قدم مربع أو أكثر بسعر 1,320 روفيا لكل منها، تساهم مباشرة في تحقيق هذا المشروع.',
     'project.gallery.title': 'تصميم المبنى',
 
-    'footer.rights': '© 2024 الجمعية الإسلامية المتحدة. جميع الحقوق محفوظة.',
+    'footer.rights': '© 2026 الجمعية الإسلامية المتحدة. جميع الحقوق محفوظة.',
     'footer.dua': 'جزاكم الله خيراً على كرمكم.',
 
     'common.donate': 'تبرع الآن',
