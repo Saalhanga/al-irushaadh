@@ -9,7 +9,8 @@ interface LanguageContextType {
 }
 
 // Persist context across HMR to avoid "must be used within Provider" errors
-const LanguageContext = (globalThis as any).__LanguageContext ??= createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext: React.Context<LanguageContextType | undefined> =
+  (globalThis as any).__LanguageContext ??= createContext<LanguageContextType | undefined>(undefined);
 
 
 const rtlLocales: Locale[] = ['dv', 'ar'];
