@@ -58,7 +58,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'project.gallery.title': 'Building Design',
 
     // Footer
-    'footer.rights': '© 2024 United Islamic Society. All rights reserved.',
+    'footer.rights': '© 2026 United Islamic Society. All rights reserved.',
     'footer.dua': 'May Allah reward your generosity.',
 
     // Common
