@@ -2,9 +2,9 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import type { Locale } from '@/i18n/translations';
 
 const languages: { code: Locale; label: string; flag: string; font?: string }[] = [
-  { code: 'en', label: 'English', flag: '🇬🇧' },
-  { code: 'dv', label: 'ދިވެހި', flag: '🇲🇻', font: "'MV Utheemu', sans-serif" },
-  { code: 'ar', label: 'العربية', flag: '🇸🇦' },
+  { code: 'en', label: 'English', flag: 'gb' },
+  { code: 'dv', label: 'ދިވެހި', flag: 'mv', font: "'MV Utheemu', sans-serif" },
+  { code: 'ar', label: 'العربية', flag: 'sa' },
 ];
 
 const LanguageSwitcher = () => {
