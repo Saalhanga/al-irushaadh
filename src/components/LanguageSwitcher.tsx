@@ -1,9 +1,9 @@
 import { useLanguage } from '@/i18n/LanguageContext';
 import type { Locale } from '@/i18n/translations';
 
-const languages: { code: Locale; label: string; flag: string }[] = [
+const languages: { code: Locale; label: string; flag: string; font?: string }[] = [
   { code: 'en', label: 'English', flag: '🇬🇧' },
-  { code: 'dv', label: 'ދިވެހި', flag: '🇲🇻' },
+  { code: 'dv', label: 'ދިވެހި', flag: '🇲🇻', font: "'MV Utheemu', sans-serif" },
   { code: 'ar', label: 'العربية', flag: '🇸🇦' },
 ];
 
@@ -24,7 +24,7 @@ const LanguageSwitcher = () => {
           aria-label={`Switch to ${lang.label}`}
         >
           <span className="mr-1">{lang.flag}</span>
-          <span className="hidden sm:inline">{lang.label}</span>
+          <span className="hidden sm:inline" style={lang.font ? { fontFamily: lang.font } : undefined}>{lang.label}</span>
         </button>
       ))}
     </div>
