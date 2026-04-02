@@ -95,7 +95,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'sponsor.bank.title': 'ބެންކް ޓްރާންސްފަރ ތަފްޞީލް',
     'sponsor.bank.name': 'ބެންކް އޮފް މޯލްޑިވްސް (ބީއެމްއެލް އިސްލާމިކް)',
     'sponsor.bank.account': 'އެކައުންޓް ނަންބަރު',
-    'sponsor.bank.holder': 'އެކައުންޓް ހޯލްޑަރ',
+    'sponsor.bank.holder': 'އެކައުންޓް ނަން',
     'sponsor.bank.holder.value': 'ޔުނައިޓެޑް އިސްލާމިކް ސޮސައިޓީ',
     'sponsor.bank.note': 'ޓްރާންސްފަރ ރެފަރެންސްގެ ގޮތުގައި "UIS Office 1320" ޖައްސަވާ.',
     'sponsor.howto': 'ސްޕޮންސަރ ކުރާނެ ގޮތް',
