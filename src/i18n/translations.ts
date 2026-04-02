@@ -80,7 +80,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'progress.of': '/',
     'progress.completed': 'ފުރިހަމަ ވެއްޖެ',
     'progress.target': 'ޓާގެޓް: MVR 1,700,000',
-    'progress.goal': 'ޓާގެޓް',
+    'progress.goal': 'ލިބިފައި',
     'progress.extra': 'ޓާގެޓަށް ވުރެ އިތުރު!',
 
     'about.title': 'މަޝްރޫޢާ ބެހޭ',
