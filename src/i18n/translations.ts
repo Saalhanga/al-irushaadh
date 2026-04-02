@@ -15,10 +15,11 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // Progress
     'progress.title': 'Donation Progress',
-    'progress.sqft': 'Square Feet Sponsored',
     'progress.of': 'of',
     'progress.completed': 'Completed',
-    'progress.target': 'Target: 1320 Square Feet',
+    'progress.target': 'Target: MVR 1,700,000',
+    'progress.goal': 'goal',
+    'progress.extra': 'above target!',
 
     // About
     'about.title': 'About the Project',
