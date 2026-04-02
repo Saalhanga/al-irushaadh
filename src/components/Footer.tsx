@@ -25,6 +25,7 @@ const socialLinks = [
   { href: 'https://x.com/uis_org', icon: XIcon, label: 'X', custom: true },
   { href: 'https://www.tiktok.com/@uis.org', icon: TikTokIcon, label: 'TikTok', custom: true },
   { href: 'https://t.me/uismv', icon: Send, label: 'Telegram' },
+  { href: 'https://invite.viber.com/?g2=AQBdweUQPICtpEgoYccSUekjF67N9gkMytwp7c3EHX5G8BbC40nKVlRHfbSJopeI', icon: ViberIcon, label: 'Viber', custom: true },
   { href: 'https://www.youtube.com/@UISMedia', icon: Youtube, label: 'YouTube' },
 ];
 
