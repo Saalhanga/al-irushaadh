@@ -1,30 +1,30 @@
-import { useState } from 'react';
-import { useAuth } from '@/hooks/use-auth';
-import { supabase } from '@/integrations/supabase/client';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Navigate } from 'react-router-dom';
-import { LogOut, Save } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState } from "react";
+import { useAuth } from "@/hooks/use-auth";
+import { supabase } from "@/integrations/supabase/client";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Navigate } from "react-router-dom";
+import { LogOut, Save } from "lucide-react";
+import { toast } from "sonner";
 
 const AdminLogin = ({ onLogin }: { onLogin: (email: string, password: string) => Promise<void> }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
+    setError("");
     try {
       await onLogin(email, password);
     } catch (err: any) {
-      setError(err.message || 'Login failed');
+      setError(err.message || "Login failed");
     } finally {
       setLoading(false);
     }
@@ -45,11 +45,17 @@ const AdminLogin = ({ onLogin }: { onLogin: (email: string, password: string) =>
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+              <Input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
             </div>
             {error && <p className="text-destructive text-sm">{error}</p>}
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? 'Signing in...' : 'Sign In'}
+              {loading ? "Signing in..." : "Sign In"}
             </Button>
           </form>
         </CardContent>
@@ -61,9 +67,9 @@ const AdminLogin = ({ onLogin }: { onLogin: (email: string, password: string) =>
 const DonationProgressEditor = () => {
   const queryClient = useQueryClient();
   const { data: progress } = useQuery({
-    queryKey: ['donation-progress'],
+    queryKey: ["donation-progress"],
     queryFn: async () => {
-      const { data, error } = await supabase.from('donation_progress').select('*').limit(1).single();
+      const { data, error } = await supabase.from("donation_progress").select("*").limit(1).single();
       if (error) throw error;
       return data;
     },
@@ -79,14 +85,14 @@ const DonationProgressEditor = () => {
     mutationFn: async (amount: number) => {
       if (!progress) return;
       const { error } = await supabase
-        .from('donation_progress')
+        .from("donation_progress")
         .update({ current_amount: amount } as any)
-        .eq('id', progress.id);
+        .eq("id", progress.id);
       if (error) throw error;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['donation-progress'] });
-      toast.success('Progress updated!');
+      queryClient.invalidateQueries({ queryKey: ["donation-progress"] });
+      toast.success("Progress updated!");
     },
     onError: (err: any) => toast.error(err.message),
   });
@@ -122,17 +128,17 @@ const DonationProgressEditor = () => {
 const BankAccountEditor = () => {
   const queryClient = useQueryClient();
   const { data: accounts } = useQuery({
-    queryKey: ['admin-bank-accounts'],
+    queryKey: ["admin-bank-accounts"],
     queryFn: async () => {
-      const { data, error } = await supabase.from('bank_accounts').select('*');
+      const { data, error } = await supabase.from("bank_accounts").select("*");
       if (error) throw error;
       return data;
     },
   });
 
-  const [bankName, setBankName] = useState('');
-  const [accountNumber, setAccountNumber] = useState('');
-  const [accountHolder, setAccountHolder] = useState('');
+  const [bankName, setBankName] = useState("");
+  const [accountNumber, setAccountNumber] = useState("");
+  const [accountHolder, setAccountHolder] = useState("");
 
   const account = accounts?.[0];
 
@@ -140,19 +146,19 @@ const BankAccountEditor = () => {
     mutationFn: async () => {
       if (!account) return;
       const { error } = await supabase
-        .from('bank_accounts')
+        .from("bank_accounts")
         .update({
           bank_name: bankName || account.bank_name,
           account_number: accountNumber || account.account_number,
           account_holder: accountHolder || account.account_holder,
         })
-        .eq('id', account.id);
+        .eq("id", account.id);
       if (error) throw error;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['bank-accounts'] });
-      queryClient.invalidateQueries({ queryKey: ['admin-bank-accounts'] });
-      toast.success('Bank details updated!');
+      queryClient.invalidateQueries({ queryKey: ["bank-accounts"] });
+      queryClient.invalidateQueries({ queryKey: ["admin-bank-accounts"] });
+      toast.success("Bank details updated!");
     },
     onError: (err: any) => toast.error(err.message),
   });
@@ -165,22 +171,19 @@ const BankAccountEditor = () => {
       <CardContent className="space-y-4">
         <div className="space-y-2">
           <Label>Bank Name</Label>
-          <Input
-            value={bankName || account?.bank_name || ''}
-            onChange={(e) => setBankName(e.target.value)}
-          />
+          <Input value={bankName || account?.bank_name || ""} onChange={(e) => setBankName(e.target.value)} />
         </div>
         <div className="space-y-2">
           <Label>Account Number</Label>
           <Input
-            value={accountNumber || account?.account_number || ''}
+            value={accountNumber || account?.account_number || ""}
             onChange={(e) => setAccountNumber(e.target.value)}
           />
         </div>
         <div className="space-y-2">
-          <Label>Account Holder</Label>
+          <Label>Account Name</Label>
           <Input
-            value={accountHolder || account?.account_holder || ''}
+            value={accountHolder || account?.account_holder || ""}
             onChange={(e) => setAccountHolder(e.target.value)}
           />
         </div>
@@ -195,32 +198,35 @@ const BankAccountEditor = () => {
 const SiteContentEditor = () => {
   const queryClient = useQueryClient();
   const { data: content } = useQuery({
-    queryKey: ['admin-site-content'],
+    queryKey: ["admin-site-content"],
     queryFn: async () => {
-      const { data, error } = await supabase.from('site_content').select('*').order('key');
+      const { data, error } = await supabase.from("site_content").select("*").order("key");
       if (error) throw error;
       return data;
     },
   });
 
-  const [newKey, setNewKey] = useState('');
-  const [newLocale, setNewLocale] = useState('en');
-  const [newValue, setNewValue] = useState('');
+  const [newKey, setNewKey] = useState("");
+  const [newLocale, setNewLocale] = useState("en");
+  const [newValue, setNewValue] = useState("");
 
   const addMutation = useMutation({
     mutationFn: async () => {
-      const { error } = await supabase.from('site_content').upsert({
-        key: newKey,
-        locale: newLocale,
-        value: newValue,
-      }, { onConflict: 'key,locale' });
+      const { error } = await supabase.from("site_content").upsert(
+        {
+          key: newKey,
+          locale: newLocale,
+          value: newValue,
+        },
+        { onConflict: "key,locale" },
+      );
       if (error) throw error;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['admin-site-content'] });
-      setNewKey('');
-      setNewValue('');
-      toast.success('Content saved!');
+      queryClient.invalidateQueries({ queryKey: ["admin-site-content"] });
+      setNewKey("");
+      setNewValue("");
+      toast.success("Content saved!");
     },
     onError: (err: any) => toast.error(err.message),
   });
@@ -298,7 +304,9 @@ const Admin = () => {
           <CardContent className="p-8 text-center space-y-4">
             <p className="text-foreground">You do not have admin access.</p>
             <p className="text-muted-foreground text-sm">Signed in as {user.email}</p>
-            <Button variant="outline" onClick={signOut}>Sign Out</Button>
+            <Button variant="outline" onClick={signOut}>
+              Sign Out
+            </Button>
           </CardContent>
         </Card>
       </div>
