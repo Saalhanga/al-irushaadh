@@ -11,8 +11,8 @@ const Sponsor = () => {
   const { data: progress } = useDonationProgress();
   const { data: bankAccounts } = useBankAccounts();
 
-  const currentSqft = progress?.current_sqft ?? 0;
-  const totalSqft = progress?.total_sqft ?? 1320;
+  const currentAmount = progress?.current_amount ?? 0;
+  const totalAmount = progress?.total_amount ?? 1700000;
   const account = bankAccounts?.[0];
 
   const copyAccount = () => {
