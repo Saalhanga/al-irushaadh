@@ -134,10 +134,11 @@ export const translations: Record<Locale, Record<string, string>> = {
     'hero.cta': 'ارعَ قدماً مربعاً واحداً – 1320 روفيا',
 
     'progress.title': 'تقدم التبرعات',
-    'progress.sqft': 'أقدام مربعة مرعية',
     'progress.of': 'من',
     'progress.completed': 'مكتمل',
-    'progress.target': 'الهدف: 1320 قدم مربع',
+    'progress.target': 'الهدف: MVR 1,700,000',
+    'progress.goal': 'الهدف',
+    'progress.extra': 'فوق الهدف!',
 
     'about.title': 'عن المشروع',
     'about.description': 'تقوم الجمعية الإسلامية المتحدة ببناء مكتب ليكون مركزاً لخدمات المجتمع والتعليم والتنسيق.',

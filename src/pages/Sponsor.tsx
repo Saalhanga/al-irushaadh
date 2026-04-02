@@ -34,7 +34,7 @@ const Sponsor = () => {
 
         <Card className="border-0 shadow-lg">
           <CardContent className="p-8">
-            <DonationProgress current={currentSqft} total={totalSqft} />
+            <DonationProgress currentAmount={currentAmount} totalAmount={totalAmount} />
           </CardContent>
         </Card>
 

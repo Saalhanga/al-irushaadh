@@ -36,7 +36,7 @@ const Index = () => {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
         <Card className="shadow-lg border-0">
           <CardContent className="p-8">
-            <DonationProgress current={currentSqft} total={totalSqft} />
+            <DonationProgress currentAmount={currentAmount} totalAmount={totalAmount} />
           </CardContent>
         </Card>
       </section>
