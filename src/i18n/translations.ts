@@ -152,7 +152,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'sponsor.bank.title': 'تفاصيل التحويل البنكي',
     'sponsor.bank.name': 'بنك المالديف (BML الإسلامي)',
     'sponsor.bank.account': 'رقم الحساب',
-    'sponsor.bank.holder': 'صاحب الحساب',
+    'sponsor.bank.holder': 'اسم الحساب',
     'sponsor.bank.holder.value': 'الجمعية الإسلامية المتحدة',
     'sponsor.bank.note': 'يرجى كتابة "UIS Office 1320" كمرجع للتحويل.',
     'sponsor.howto': 'كيفية الرعاية',
