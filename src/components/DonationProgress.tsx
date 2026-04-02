@@ -41,7 +41,7 @@ const DonationProgress = ({ currentAmount, totalAmount, className = '' }: Donati
       </div>
 
       <div className="flex items-center justify-between text-sm text-muted-foreground">
-        <span>{formatMVR(currentAmount)} {t('progress.of')} {formatMVR(totalAmount)} {t('progress.goal')}</span>
+        <span>{formatMVR(currentAmount)} {t('progress.goal')}</span>
         {currentAmount > totalAmount && (
           <span className="text-accent font-medium">{formatMVR(currentAmount - totalAmount)} {t('progress.extra')}</span>
         )}
