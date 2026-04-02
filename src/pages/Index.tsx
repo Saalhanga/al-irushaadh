@@ -10,8 +10,8 @@ const Index = () => {
   const { t } = useLanguage();
   const { data: progress } = useDonationProgress();
 
-  const currentSqft = progress?.current_sqft ?? 0;
-  const totalSqft = progress?.total_sqft ?? 1320;
+  const currentAmount = progress?.current_amount ?? 0;
+  const totalAmount = progress?.total_amount ?? 1700000;
 
   return (
     <div className="min-h-screen">
