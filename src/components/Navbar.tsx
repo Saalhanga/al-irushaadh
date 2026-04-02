@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import uisLogo from '@/assets/uis-logo.png';
 import { useLanguage } from '@/i18n/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useState } from 'react';
@@ -20,9 +21,7 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">U</span>
-            </div>
+            <img src={uisLogo} alt="UIS Logo" className="h-8 w-8 rounded-full object-cover" />
             <span className="font-semibold text-foreground text-lg hidden sm:block">UIS Office 1320</span>
           </Link>
 
