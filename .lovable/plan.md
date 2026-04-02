@@ -1,11 +1,15 @@
 
 
-## Add Viber to Footer Social Media Links
+## Add UIS Logo to Navbar
 
-### Change
+### Changes
 
-**`src/components/Footer.tsx`**
-- Add a custom Viber SVG icon component (lucide doesn't have one)
-- Add Viber entry to the `socialLinks` array with URL `https://invite.viber.com/?g2=AQBdweUQPICtpEgoYccSUekjF67N9gkMytwp7c3EHX5G8BbC40nKVlRHfbSJopeI`
-- Place it after Telegram in the link order
+1. **Save logo asset** — Copy uploaded image to `src/assets/uis-logo.png`
+
+2. **Update Navbar (`src/components/Navbar.tsx`)**
+   - Import logo: `import uisLogo from "@/assets/uis-logo.png"`
+   - Replace the green circle placeholder (lines 23-25) with `<img src={uisLogo} alt="UIS Logo" className="h-8 w-8 rounded-full object-cover" />`
+   - Keep the "UIS Office 1320" text beside it
+
+Footer remains unchanged.
 
