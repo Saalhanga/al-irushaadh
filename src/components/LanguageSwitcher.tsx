@@ -24,7 +24,7 @@ const LanguageSwitcher = () => {
           aria-label={`Switch to ${lang.label}`}
         >
           <span className="mr-1">{lang.flag}</span>
-          <span className="hidden sm:inline">{lang.label}</span>
+          <span className="hidden sm:inline" style={lang.font ? { fontFamily: lang.font } : undefined}>{lang.label}</span>
         </button>
       ))}
     </div>
