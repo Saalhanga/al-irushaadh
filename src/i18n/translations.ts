@@ -35,7 +35,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'sponsor.bank.title': 'Bank Transfer Details',
     'sponsor.bank.name': 'Bank of Maldives (BML Islamic)',
     'sponsor.bank.account': 'Account Number',
-    'sponsor.bank.holder': 'Account Holder',
+    'sponsor.bank.holder': 'Account Name',
     'sponsor.bank.holder.value': 'United Islamic Society',
     'sponsor.bank.note': 'Please include "UIS Office 1320" as the transfer reference.',
     'sponsor.howto': 'How to Sponsor',
