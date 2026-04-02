@@ -46,20 +46,26 @@ export type Database = {
       }
       donation_progress: {
         Row: {
+          current_amount: number | null
           current_sqft: number
           id: string
+          total_amount: number | null
           total_sqft: number
           updated_at: string
         }
         Insert: {
+          current_amount?: number | null
           current_sqft?: number
           id?: string
+          total_amount?: number | null
           total_sqft?: number
           updated_at?: string
         }
         Update: {
+          current_amount?: number | null
           current_sqft?: number
           id?: string
+          total_amount?: number | null
           total_sqft?: number
           updated_at?: string
         }
