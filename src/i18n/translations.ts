@@ -18,7 +18,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'progress.of': 'of',
     'progress.completed': 'Completed',
     'progress.target': 'Target: MVR 1,700,000',
-    'progress.goal': 'goal',
+    'progress.goal': 'Reached',
     'progress.extra': 'above target!',
 
     // About
