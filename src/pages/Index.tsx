@@ -10,8 +10,8 @@ const Index = () => {
   const { t } = useLanguage();
   const { data: progress } = useDonationProgress();
 
-  const currentSqft = progress?.current_sqft ?? 0;
-  const totalSqft = progress?.total_sqft ?? 1320;
+  const currentAmount = progress?.current_amount ?? 0;
+  const totalAmount = progress?.total_amount ?? 1700000;
 
   return (
     <div className="min-h-screen">
@@ -36,7 +36,7 @@ const Index = () => {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
         <Card className="shadow-lg border-0">
           <CardContent className="p-8">
-            <DonationProgress current={currentSqft} total={totalSqft} />
+            <DonationProgress currentAmount={currentAmount} totalAmount={totalAmount} />
           </CardContent>
         </Card>
       </section>

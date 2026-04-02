@@ -15,10 +15,11 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // Progress
     'progress.title': 'Donation Progress',
-    'progress.sqft': 'Square Feet Sponsored',
     'progress.of': 'of',
     'progress.completed': 'Completed',
-    'progress.target': 'Target: 1320 Square Feet',
+    'progress.target': 'Target: MVR 1,700,000',
+    'progress.goal': 'goal',
+    'progress.extra': 'above target!',
 
     // About
     'about.title': 'About the Project',
@@ -76,10 +77,11 @@ export const translations: Record<Locale, Record<string, string>> = {
     'hero.cta': '1 އަކަފޫޓް ސްޕޮންސަރ ކުރައްވާ – 1320 ރުފިޔާ',
 
     'progress.title': 'ފައިސާ ލިބެމުންދާ މިންވަރު',
-    'progress.sqft': 'ސްޕޮންސަރ ކުރެވިފައިވާ އަކަފޫޓް',
     'progress.of': '/',
     'progress.completed': 'ފުރިހަމަ ވެއްޖެ',
-    'progress.target': 'ޓާގެޓް: 1320 އަކަފޫޓް',
+    'progress.target': 'ޓާގެޓް: MVR 1,700,000',
+    'progress.goal': 'ޓާގެޓް',
+    'progress.extra': 'ޓާގެޓަށް ވުރެ އިތުރު!',
 
     'about.title': 'މަޝްރޫޢާ ބެހޭ',
     'about.description': 'ޔުނައިޓެޑް އިސްލާމިކް ސޮސައިޓީން ދަނީ މުޖުތަމަޢުގެ ޚިދުމަތްތަކާއި ތަޢުލީމާއި ގުޅުން ބަދަހިކުރުމުގެ މަރުކަޒެއްގެ ގޮތުގައި އޮފީހެއް ބިނާކުރަމުންނެވެ.',
@@ -132,10 +134,11 @@ export const translations: Record<Locale, Record<string, string>> = {
     'hero.cta': 'ارعَ قدماً مربعاً واحداً – 1320 روفيا',
 
     'progress.title': 'تقدم التبرعات',
-    'progress.sqft': 'أقدام مربعة مرعية',
     'progress.of': 'من',
     'progress.completed': 'مكتمل',
-    'progress.target': 'الهدف: 1320 قدم مربع',
+    'progress.target': 'الهدف: MVR 1,700,000',
+    'progress.goal': 'الهدف',
+    'progress.extra': 'فوق الهدف!',
 
     'about.title': 'عن المشروع',
     'about.description': 'تقوم الجمعية الإسلامية المتحدة ببناء مكتب ليكون مركزاً لخدمات المجتمع والتعليم والتنسيق.',

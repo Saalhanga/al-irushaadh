@@ -69,18 +69,18 @@ const DonationProgressEditor = () => {
     },
   });
 
-  const [currentSqft, setCurrentSqft] = useState<number>(0);
+  const [currentAmount, setCurrentAmount] = useState<number>(0);
 
   useState(() => {
-    if (progress) setCurrentSqft(progress.current_sqft);
+    if (progress) setCurrentAmount(progress.current_amount ?? 0);
   });
 
   const mutation = useMutation({
-    mutationFn: async (sqft: number) => {
+    mutationFn: async (amount: number) => {
       if (!progress) return;
       const { error } = await supabase
         .from('donation_progress')
-        .update({ current_sqft: sqft })
+        .update({ current_amount: amount } as any)
         .eq('id', progress.id);
       if (error) throw error;
     },
@@ -99,19 +99,19 @@ const DonationProgressEditor = () => {
       <CardContent className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label>Current Square Feet</Label>
+            <Label>Current Amount (MVR)</Label>
             <Input
               type="number"
-              value={currentSqft || progress?.current_sqft || 0}
-              onChange={(e) => setCurrentSqft(Number(e.target.value))}
+              value={currentAmount || (progress as any)?.current_amount || 0}
+              onChange={(e) => setCurrentAmount(Number(e.target.value))}
             />
           </div>
           <div className="space-y-2">
-            <Label>Total Target</Label>
-            <Input value={progress?.total_sqft || 1320} disabled />
+            <Label>Target Amount (MVR)</Label>
+            <Input value={(progress as any)?.total_amount || 1700000} disabled />
           </div>
         </div>
-        <Button onClick={() => mutation.mutate(currentSqft)} disabled={mutation.isPending}>
+        <Button onClick={() => mutation.mutate(currentAmount)} disabled={mutation.isPending}>
           <Save className="w-4 h-4" /> Save Progress
         </Button>
       </CardContent>

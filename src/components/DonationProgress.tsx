@@ -2,26 +2,32 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { useEffect, useState } from 'react';
 
 interface DonationProgressProps {
-  current: number;
-  total: number;
+  currentAmount: number;
+  totalAmount: number;
   className?: string;
 }
 
-const DonationProgress = ({ current, total, className = '' }: DonationProgressProps) => {
+const formatMVR = (amount: number) => {
+  return `MVR ${amount.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+};
+
+const DonationProgress = ({ currentAmount, totalAmount, className = '' }: DonationProgressProps) => {
   const { t } = useLanguage();
   const [animated, setAnimated] = useState(0);
-  const percentage = Math.round((current / total) * 100);
+  const rawPercentage = totalAmount > 0 ? (currentAmount / totalAmount) * 100 : 0;
+  const displayPercentage = Math.round(rawPercentage);
+  const barPercentage = Math.min(rawPercentage, 100);
 
   useEffect(() => {
-    const timer = setTimeout(() => setAnimated(percentage), 300);
+    const timer = setTimeout(() => setAnimated(barPercentage), 300);
     return () => clearTimeout(timer);
-  }, [percentage]);
+  }, [barPercentage]);
 
   return (
     <div className={`space-y-4 ${className}`}>
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold text-foreground">{t('progress.title')}</h3>
-        <span className="text-sm font-medium text-accent">{animated}% {t('progress.completed')}</span>
+        <span className="text-sm font-medium text-accent">{displayPercentage}% {t('progress.completed')}</span>
       </div>
 
       <div className="relative h-6 w-full overflow-hidden rounded-full bg-secondary">
@@ -35,8 +41,13 @@ const DonationProgress = ({ current, total, className = '' }: DonationProgressPr
       </div>
 
       <div className="flex items-center justify-between text-sm text-muted-foreground">
-        <span>{current} {t('progress.of')} {total} {t('progress.sqft')}</span>
-        <span>{t('progress.target')}</span>
+        <span>{formatMVR(currentAmount)} {t('progress.of')} {formatMVR(totalAmount)} {t('progress.goal')}</span>
+        {currentAmount > totalAmount && (
+          <span className="text-accent font-medium">{formatMVR(currentAmount - totalAmount)} {t('progress.extra')}</span>
+        )}
+        {currentAmount <= totalAmount && (
+          <span>{t('progress.target')}</span>
+        )}
       </div>
     </div>
   );
