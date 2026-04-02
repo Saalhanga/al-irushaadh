@@ -2,9 +2,9 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import type { Locale } from '@/i18n/translations';
 
 const languages: { code: Locale; label: string; flag: string; font?: string }[] = [
-  { code: 'en', label: 'English', flag: '🇬🇧' },
-  { code: 'dv', label: 'ދިވެހި', flag: '🇲🇻', font: "'MV Utheemu', sans-serif" },
-  { code: 'ar', label: 'العربية', flag: '🇸🇦' },
+  { code: 'en', label: 'English', flag: 'gb' },
+  { code: 'dv', label: 'ދިވެހި', flag: 'mv', font: "'MV Utheemu', sans-serif" },
+  { code: 'ar', label: 'العربية', flag: 'sa' },
 ];
 
 const LanguageSwitcher = () => {
@@ -23,7 +23,7 @@ const LanguageSwitcher = () => {
           }`}
           aria-label={`Switch to ${lang.label}`}
         >
-          <span className="sm:mr-1">{lang.flag}</span>
+          <img src={`https://flagcdn.com/20x15/${lang.flag}.png`} width={20} height={15} alt={lang.label} className="inline-block sm:mr-1" />
           <span className="hidden sm:inline" style={lang.font ? { fontFamily: lang.font } : undefined}>{lang.label}</span>
         </button>
       ))}
