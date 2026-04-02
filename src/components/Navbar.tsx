@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import uisLogo from '@/assets/uis-logo.png';
 import { useLanguage } from '@/i18n/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useState } from 'react';
