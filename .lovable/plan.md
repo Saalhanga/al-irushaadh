@@ -1,17 +1,16 @@
 
 
-## Fix: Replace Emoji Flags with SVG Flag Images
+## Remove target amount display and update label
 
-### Problem
-Flag emojis (🇬🇧, 🇲🇻, 🇸🇦) don't render on Windows and some browsers — they show as two-letter country codes ("GB", "MV", "SA") instead of actual flags.
+The user wants two changes in the donation progress section:
+1. Remove the `"/ MVR 1,700,000"` part (the `{t('progress.of')} {formatMVR(totalAmount)}` portion on line 44)
+2. Change the Dhivehi translation of `progress.goal` from "ޓާގެޓް" to "ލިބިފައި" (meaning "received" instead of "target/goal")
 
-### Solution
-Replace emoji flags with small inline SVG flag icons using a free CDN (flagcdn.com) that serves country flag images reliably across all platforms.
+### Changes
 
-### Change
+**`src/components/DonationProgress.tsx`** (line 44)
+- Change the bottom-left text from `{formatMVR(currentAmount)} {t('progress.of')} {formatMVR(totalAmount)} {t('progress.goal')}` to just `{formatMVR(currentAmount)} {t('progress.goal')}` — removing the "of MVR 1,700,000" portion.
 
-**`src/components/LanguageSwitcher.tsx`**
-- Change the `flag` property from emoji strings to country code strings (`gb`, `mv`, `sa`)
-- Replace the emoji `<span>` with an `<img>` tag loading from `https://flagcdn.com/20x15/{code}.png`
-- Add `width={20} height={15}` and appropriate `alt` text for accessibility
+**`src/i18n/translations.ts`**
+- Dhivehi: Change `'progress.goal': 'ޓާގެޓް'` to `'progress.goal': 'ލިބިފައި'`
 
