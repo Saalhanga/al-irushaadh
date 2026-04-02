@@ -1,12 +1,10 @@
 
 
-## Apply MV Utheemu Font to Dhivehi Language Button
+## Change "Account Holder" label to "Account Name"
 
 ### Change
 
-**`src/components/LanguageSwitcher.tsx`** — Add a `fontFamily` style to the Dhivehi (`dv`) button so its label renders in MV Utheemu instead of the default font.
+**`src/pages/Sponsor.tsx`** — Update the bank account detail label from the translation key `sponsor.bank.holder` display to show "Account Name" instead of "Account Holder".
 
-- Add a `font` property to the languages array for `dv`: `font: "'MV Utheemu', sans-serif"`
-- Apply it as an inline `style={{ fontFamily: lang.font }}` on the label `<span>`
-- The font is already loaded in `index.css` via `@font-face`, so no additional setup needed
+**`src/i18n/translations.ts`** — Update the translation string for `sponsor.bank.holder` in all locales to say "Account Name" (English), and equivalent in Dhivehi/Arabic.
 
