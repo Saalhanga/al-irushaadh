@@ -1,16 +1,12 @@
 
 
-## Update Logo and Favicon with New UIS Image
+## Apply MV Utheemu Font to Dhivehi Language Button
 
-### Changes
+### Change
 
-1. **Copy the uploaded image** to both locations:
-   - `src/assets/uis-logo.png` (overwrite existing, for navbar)
-   - `public/favicon.png` (for favicon)
+**`src/components/LanguageSwitcher.tsx`** — Add a `fontFamily` style to the Dhivehi (`dv`) button so its label renders in MV Utheemu instead of the default font.
 
-2. **`index.html`** — Update favicon reference:
-   - Change `<link rel="icon" type="image/x-icon" href="/favicon.ico">` to `<link rel="icon" type="image/png" href="/favicon.png">`
-   - Delete `public/favicon.ico` if it exists
-
-3. **Navbar** — No code changes needed, already imports from `src/assets/uis-logo.png`
+- Add a `font` property to the languages array for `dv`: `font: "'MV Utheemu', sans-serif"`
+- Apply it as an inline `style={{ fontFamily: lang.font }}` on the label `<span>`
+- The font is already loaded in `index.css` via `@font-face`, so no additional setup needed
 
