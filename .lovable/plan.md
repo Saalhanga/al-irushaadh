@@ -1,9 +1,11 @@
 
 
-## Replace building-render-2.jpg
+## Change "goal" to "Reached"
 
-Copy the uploaded image to overwrite `public/images/building-render-2.jpg`.
+### Changes
 
-### Change
-- **`public/images/building-render-2.jpg`**: Replace with the uploaded image (`user-uploads://image-10.png`).
+**`src/i18n/translations.ts`**
+- Line 21: Change English `'progress.goal': 'goal'` → `'progress.goal': 'Reached'`
+- Line 140: Change Arabic `'progress.goal': 'الهدف'` → `'progress.goal': 'تم الوصول'` (Arabic for "Reached")
+- Dhivehi (line 83) already says "ލިބިފައި" which means "received/reached" — no change needed.
 
