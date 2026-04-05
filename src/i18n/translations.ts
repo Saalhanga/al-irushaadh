@@ -4,14 +4,14 @@ export const translations: Record<Locale, Record<string, string>> = {
   en: {
     // Nav
     'nav.home': 'Home',
-    'nav.sponsor': 'Sponsor',
+    'nav.sponsor': 'Share',
     'nav.project': 'Project Details',
     'nav.admin': 'Admin',
 
     // Hero
     'hero.title': 'Build the United Islamic Society Office Together',
     'hero.subtitle': 'Join your community in building a space that serves everyone. Sponsor 1 square foot and leave your mark.',
-    'hero.cta': 'Sponsor 1 Square Foot – 1320 MVR',
+    'hero.cta': 'Share 1 Square Foot – 1320 MVR',
 
     // Progress
     'progress.title': 'Donation Progress',
@@ -28,8 +28,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     'about.why.text': 'A dedicated office space enables the United Islamic Society to better serve the Muslim community through organized programs, counseling, educational initiatives, and administrative coordination.',
 
     // Sponsor page
-    'sponsor.title': 'Sponsor a Square Foot',
-    'sponsor.subtitle': 'Each square foot costs 1320 MVR. Your contribution directly supports the construction of the UIS office.',
+    'sponsor.title': 'Share a Square Foot',
+    'sponsor.subtitle': 'Each square foot costs 1320 MVR. Your share directly supports the construction of the UIS office.',
     'sponsor.price': '1,320 MVR',
     'sponsor.per': 'per square foot',
     'sponsor.bank.title': 'Bank Transfer Details',
@@ -38,8 +38,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     'sponsor.bank.holder': 'Account Name',
     'sponsor.bank.holder.value': 'United Islamic Society',
     'sponsor.bank.note': 'Please include "UIS Office 1320" as the transfer reference.',
-    'sponsor.howto': 'How to Sponsor',
-    'sponsor.step1': 'Choose how many square feet you want to sponsor',
+    'sponsor.howto': 'How to Share',
+    'sponsor.step1': 'Choose how many square feet you want to share',
     'sponsor.step2': 'Transfer the amount to the bank account above',
     'sponsor.step3': 'Include "UIS Office 1320" as your reference',
     'sponsor.step4': 'Your contribution will be reflected in the progress bar',
@@ -55,7 +55,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'project.purpose.item4': 'Event planning and community gathering space',
     'project.purpose.item5': 'Resource center for Islamic education materials',
     'project.sqft.title': 'The Square Foot Concept',
-    'project.sqft.desc': 'The total building area is 1,320 square feet. We have divided the project into 1,320 equal sponsorship units — each representing 1 square foot of the building. By sponsoring one or more square feet at 1,320 MVR each, you directly contribute to making this project a reality.',
+    'project.sqft.desc': 'The total building area is 1,320 square feet. We have divided the project into 1,320 equal share units — each representing 1 square foot of the building. By sharing one or more square feet at 1,320 MVR each, you directly contribute to making this project a reality.',
     'project.gallery.title': 'Building Design',
 
     // Footer
@@ -68,13 +68,13 @@ export const translations: Record<Locale, Record<string, string>> = {
   },
   dv: {
     'nav.home': 'ފުރަތަމަ ޞަފްޙާ',
-    'nav.sponsor': 'ސްޕޮންސަރ',
+    'nav.sponsor': 'ޙިއްޞާ',
     'nav.project': 'މަޝްރޫޢުގެ ތަފްޞީލް',
     'nav.admin': 'އެޑްމިން',
 
     'hero.title': 'ޔުނައިޓެޑް އިސްލާމިކް ސޮސައިޓީގެ އޮފީސް އެކުގައި ބިނާކުރައްވާ',
-    'hero.subtitle': 'އެންމެންނަށް ޚިދުމަތް ކުރެވޭ ތަނެއް ބިނާކުރުމުގައި މުޖުތަމަޢާ ބައިވެރިވެލައްވާ. 1 އަކަފޫޓް ސްޕޮންސަރ ކުރައްވާ.',
-    'hero.cta': '1 އަކަފޫޓް ސްޕޮންސަރ ކުރައްވާ – 1320 ރުފިޔާ',
+    'hero.subtitle': 'އެންމެންނަށް ޚިދުމަތް ކުރެވޭ ތަނެއް ބިނާކުރުމުގައި މުޖުތަމަޢާ ބައިވެރިވެލައްވާ. 1 އަކަފޫޓް ޙިއްޞާ ކުރައްވާ.',
+    'hero.cta': '1 އަކަފޫޓް ޙިއްޞާ ކުރައްވާ – 1320 ރުފިޔާ',
 
     'progress.title': 'ފައިސާ ލިބެމުންދާ މިންވަރު',
     'progress.of': '/',
@@ -88,7 +88,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'about.why': 'މިކަން މުހިންމުވަނީ ކީއްވެ',
     'about.why.text': 'ޚާއްޞަ އޮފީސް ޖާގައެއް ހުރުމުން ޔުނައިޓެޑް އިސްލާމިކް ސޮސައިޓީއަށް މުސްލިމް މުޖުތަމަޢަށް ރަނގަޅަށް ޚިދުމަތް ކުރެވޭނެއެވެ.',
 
-    'sponsor.title': 'އަކަފޫޓެއް ސްޕޮންސަރ ކުރައްވާ',
+    'sponsor.title': 'އަކަފޫޓެއް ޙިއްޞާ ކުރައްވާ',
     'sponsor.subtitle': 'ކޮންމެ އަކަފޫޓެއްގެ އަގަކީ 1320 ރުފިޔާއެވެ.',
     'sponsor.price': '1,320 ރުފިޔާ',
     'sponsor.per': 'ކޮންމެ އަކަފޫޓަކަށް',
@@ -98,8 +98,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     'sponsor.bank.holder': 'އެކައުންޓް ނަން',
     'sponsor.bank.holder.value': 'ޔުނައިޓެޑް އިސްލާމިކް ސޮސައިޓީ',
     'sponsor.bank.note': 'ޓްރާންސްފަރ ރެފަރެންސްގެ ގޮތުގައި "UIS Office 1320" ޖައްސަވާ.',
-    'sponsor.howto': 'ސްޕޮންސަރ ކުރާނެ ގޮތް',
-    'sponsor.step1': 'ސްޕޮންސަރ ކުރައްވަން ބޭނުންފުޅުވާ އަކަފޫޓް ޢަދަދު ޚިޔާރުކުރައްވާ',
+    'sponsor.howto': 'ޙިއްޞާ ކުރާނެ ގޮތް',
+    'sponsor.step1': 'ޙިއްޞާ ކުރައްވަން ބޭނުންފުޅުވާ އަކަފޫޓް ޢަދަދު ޚިޔާރުކުރައްވާ',
     'sponsor.step2': 'މަތީގައިވާ ބެންކް އެކައުންޓަށް ފައިސާ ޖަމާކުރައްވާ',
     'sponsor.step3': 'ރެފަރެންސްގެ ގޮތުގައި "UIS Office 1320" ޖައްސަވާ',
     'sponsor.step4': 'ތިޔަ އެހީތެރިކަން ޕްރޮގްރެސް ބާރގައި ދައްކާނެ',
@@ -114,7 +114,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'project.purpose.item4': 'ހަރަކާތް ރާވައި މުޖުތަމަޢު އެއްވެ ތިބެވޭ ޖާގަ',
     'project.purpose.item5': 'އިސްލާމީ ތަޢުލީމީ ވަސީލަތްތަކުގެ ރިސޯސް ސެންޓަރު',
     'project.sqft.title': 'އަކަފޫޓް ކޮންސެޕްޓް',
-    'project.sqft.desc': 'ޢިމާރާތުގެ ޖުމްލަ ބޮޑުމިނަކީ 1,320 އަކަފޫޓެވެ. ކޮންމެ އަކަފޫޓެއް 1,320 ރުފިޔާއަށް ސްޕޮންސަރ ކުރެއްވޭނެއެވެ.',
+    'project.sqft.desc': 'ޢިމާރާތުގެ ޖުމްލަ ބޮޑުމިނަކީ 1,320 އަކަފޫޓެވެ. ކޮންމެ އަކަފޫޓެއް 1,320 ރުފިޔާއަށް ޙިއްޞާ ކުރެއްވޭނެއެވެ.',
     'project.gallery.title': 'ޢިމާރާތުގެ ޑިޒައިން',
 
     'footer.rights': '© 2026 ޔުނައިޓެޑް އިސްލާމިކް ސޮސައިޓީ. އެންމެހައި ޙައްޤުތައް ލިބިގެންވޭ.',
@@ -125,13 +125,13 @@ export const translations: Record<Locale, Record<string, string>> = {
   },
   ar: {
     'nav.home': 'الرئيسية',
-    'nav.sponsor': 'رعاية',
+    'nav.sponsor': 'مشاركة',
     'nav.project': 'تفاصيل المشروع',
     'nav.admin': 'لوحة الإدارة',
 
     'hero.title': 'ابنِ مكتب الجمعية الإسلامية المتحدة معاً',
-    'hero.subtitle': 'انضم إلى مجتمعك في بناء مكان يخدم الجميع. ارعَ قدماً مربعاً واترك بصمتك.',
-    'hero.cta': 'ارعَ قدماً مربعاً واحداً – 1320 روفيا',
+    'hero.subtitle': 'انضم إلى مجتمعك في بناء مكان يخدم الجميع. شارِك بقدم مربع واترك بصمتك.',
+    'hero.cta': 'شارِك بقدم مربع واحد – 1320 روفيا',
 
     'progress.title': 'تقدم التبرعات',
     'progress.of': 'من',
@@ -145,8 +145,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     'about.why': 'لماذا هذا مهم',
     'about.why.text': 'يتيح المكتب المخصص للجمعية الإسلامية المتحدة خدمة المجتمع المسلم بشكل أفضل.',
 
-    'sponsor.title': 'ارعَ قدماً مربعاً',
-    'sponsor.subtitle': 'تكلفة كل قدم مربع 1320 روفيا. مساهمتك تدعم بناء مكتب الجمعية مباشرة.',
+    'sponsor.title': 'شارِك بقدم مربع',
+    'sponsor.subtitle': 'تكلفة كل قدم مربع 1320 روفيا. مشاركتك تدعم بناء مكتب الجمعية مباشرة.',
     'sponsor.price': '1,320 روفيا',
     'sponsor.per': 'لكل قدم مربع',
     'sponsor.bank.title': 'تفاصيل التحويل البنكي',
@@ -155,8 +155,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     'sponsor.bank.holder': 'اسم الحساب',
     'sponsor.bank.holder.value': 'الجمعية الإسلامية المتحدة',
     'sponsor.bank.note': 'يرجى كتابة "UIS Office 1320" كمرجع للتحويل.',
-    'sponsor.howto': 'كيفية الرعاية',
-    'sponsor.step1': 'اختر عدد الأقدام المربعة التي تريد رعايتها',
+    'sponsor.howto': 'كيفية المشاركة',
+    'sponsor.step1': 'اختر عدد الأقدام المربعة التي تريد المشاركة بها',
     'sponsor.step2': 'حوّل المبلغ إلى الحساب البنكي أعلاه',
     'sponsor.step3': 'اكتب "UIS Office 1320" كمرجع',
     'sponsor.step4': 'ستنعكس مساهمتك في شريط التقدم',
@@ -171,7 +171,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'project.purpose.item4': 'تخطيط الفعاليات ومكان التجمعات',
     'project.purpose.item5': 'مركز موارد للمواد التعليمية الإسلامية',
     'project.sqft.title': 'مفهوم القدم المربع',
-    'project.sqft.desc': 'المساحة الإجمالية للمبنى 1,320 قدم مربع. قسّمنا المشروع إلى 1,320 وحدة رعاية متساوية. برعاية قدم مربع أو أكثر بسعر 1,320 روفيا لكل منها، تساهم مباشرة في تحقيق هذا المشروع.',
+    'project.sqft.desc': 'المساحة الإجمالية للمبنى 1,320 قدم مربع. قسّمنا المشروع إلى 1,320 وحدة مشاركة متساوية. بمشاركة قدم مربع أو أكثر بسعر 1,320 روفيا لكل منها، تساهم مباشرة في تحقيق هذا المشروع.',
     'project.gallery.title': 'تصميم المبنى',
 
     'footer.rights': '© 2026 الجمعية الإسلامية المتحدة. جميع الحقوق محفوظة.',
