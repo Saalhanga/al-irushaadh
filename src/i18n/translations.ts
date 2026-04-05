@@ -125,7 +125,7 @@ export const translations: Record<Locale, Record<string, string>> = {
   },
   ar: {
     'nav.home': 'الرئيسية',
-    'nav.sponsor': 'رعاية',
+    'nav.sponsor': 'مشاركة',
     'nav.project': 'تفاصيل المشروع',
     'nav.admin': 'لوحة الإدارة',
 
