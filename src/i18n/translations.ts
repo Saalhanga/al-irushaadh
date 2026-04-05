@@ -28,8 +28,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     'about.why.text': 'A dedicated office space enables the United Islamic Society to better serve the Muslim community through organized programs, counseling, educational initiatives, and administrative coordination.',
 
     // Sponsor page
-    'sponsor.title': 'Sponsor a Square Foot',
-    'sponsor.subtitle': 'Each square foot costs 1320 MVR. Your contribution directly supports the construction of the UIS office.',
+    'sponsor.title': 'Share a Square Foot',
+    'sponsor.subtitle': 'Each square foot costs 1320 MVR. Your share directly supports the construction of the UIS office.',
     'sponsor.price': '1,320 MVR',
     'sponsor.per': 'per square foot',
     'sponsor.bank.title': 'Bank Transfer Details',
