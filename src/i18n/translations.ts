@@ -55,7 +55,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'project.purpose.item4': 'Event planning and community gathering space',
     'project.purpose.item5': 'Resource center for Islamic education materials',
     'project.sqft.title': 'The Square Foot Concept',
-    'project.sqft.desc': 'The total building area is 1,320 square feet. We have divided the project into 1,320 equal sponsorship units — each representing 1 square foot of the building. By sponsoring one or more square feet at 1,320 MVR each, you directly contribute to making this project a reality.',
+    'project.sqft.desc': 'The total building area is 1,320 square feet. We have divided the project into 1,320 equal share units — each representing 1 square foot of the building. By sharing one or more square feet at 1,320 MVR each, you directly contribute to making this project a reality.',
     'project.gallery.title': 'Building Design',
 
     // Footer
