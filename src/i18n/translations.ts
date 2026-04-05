@@ -145,8 +145,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     'about.why': 'لماذا هذا مهم',
     'about.why.text': 'يتيح المكتب المخصص للجمعية الإسلامية المتحدة خدمة المجتمع المسلم بشكل أفضل.',
 
-    'sponsor.title': 'ارعَ قدماً مربعاً',
-    'sponsor.subtitle': 'تكلفة كل قدم مربع 1320 روفيا. مساهمتك تدعم بناء مكتب الجمعية مباشرة.',
+    'sponsor.title': 'شارِك بقدم مربع',
+    'sponsor.subtitle': 'تكلفة كل قدم مربع 1320 روفيا. مشاركتك تدعم بناء مكتب الجمعية مباشرة.',
     'sponsor.price': '1,320 روفيا',
     'sponsor.per': 'لكل قدم مربع',
     'sponsor.bank.title': 'تفاصيل التحويل البنكي',
