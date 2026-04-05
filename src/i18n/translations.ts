@@ -68,7 +68,7 @@ export const translations: Record<Locale, Record<string, string>> = {
   },
   dv: {
     'nav.home': 'ފުރަތަމަ ޞަފްޙާ',
-    'nav.sponsor': 'ސްޕޮންސަރ',
+    'nav.sponsor': 'ޙިއްޞާ',
     'nav.project': 'މަޝްރޫޢުގެ ތަފްޞީލް',
     'nav.admin': 'އެޑްމިން',
 
