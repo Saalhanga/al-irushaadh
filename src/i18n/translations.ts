@@ -162,8 +162,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     'sponsor.step4': 'ستنعكس مساهمتك في شريط التقدم',
 
     'project.title': 'تفاصيل المشروع',
-    'project.building.title': 'مبنى مكتب الجمعية',
-    'project.building.desc': 'مبنى مكتب الجمعية الإسلامية المتحدة المقترح مصمم ليكون مساحة عصرية وعملية تخدم الاحتياجات المتنوعة للمجتمع المسلم.',
+    'project.building.title': 'مبنى مكتب الإرشاد',
+    'project.building.desc': 'مبنى مكتب الإرشاد المقترح مصمم ليكون مساحة عصرية وعملية تخدم الاحتياجات المتنوعة للمجتمع المسلم.',
     'project.purpose.title': 'الغرض من المكتب',
     'project.purpose.item1': 'المقر الإداري للإرشاد',
     'project.purpose.item2': 'خدمات الاستشارة والدعم المجتمعي',
