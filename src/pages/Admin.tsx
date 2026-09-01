@@ -35,7 +35,7 @@ const AdminLogin = ({ onLogin }: { onLogin: (email: string, password: string) =>
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl">Admin Login</CardTitle>
-          <p className="text-muted-foreground text-sm">UIS Office 1320 Content Management</p>
+          <p className="text-muted-foreground text-sm">Al Irushaadh Content Management</p>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -319,7 +319,7 @@ const Admin = () => {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-foreground">Admin Panel</h1>
-            <p className="text-muted-foreground text-sm">UIS Office 1320 Content Management</p>
+            <p className="text-muted-foreground text-sm">Al Irushaadh Content Management</p>
           </div>
           <Button variant="outline" onClick={signOut}>
             <LogOut className="w-4 h-4" /> Sign Out

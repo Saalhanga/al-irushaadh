@@ -26,7 +26,7 @@ const ProjectDetails = () => {
         {/* Building Section */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="rounded-xl overflow-hidden shadow-lg">
-            <img src="/images/building-render-2.jpg" alt="UIS Office Building" className="w-full h-80 object-cover" />
+            <img src="/images/building-render-2.jpg" alt="Al Irushaadh Office Building" className="w-full h-80 object-cover" />
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-foreground">{t("project.building.title")}</h2>

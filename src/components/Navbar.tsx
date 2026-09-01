@@ -21,8 +21,8 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <img src={uisLogo} alt="UIS Logo" className="h-10 w-auto object-contain" />
-            <span className="font-semibold text-foreground text-lg hidden sm:block">UIS Office 1320</span>
+<img src={uisLogo} alt="Al Irushaadh Logo" className="h-10 w-auto object-contain" />
+            <span className="font-semibold text-foreground text-lg hidden sm:block">Al Irushaadh</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-6">

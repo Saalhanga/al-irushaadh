@@ -80,7 +80,7 @@ const Index = () => {
               </Link>
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg">
-              <img src="/images/building-render-2.jpg" alt="UIS Office Building Design" className="w-full h-80 object-cover" />
+              <img src="/images/building-render-2.jpg" alt="Al Irushaadh Office Building Design" className="w-full h-80 object-cover" />
             </div>
           </div>
         </div>
