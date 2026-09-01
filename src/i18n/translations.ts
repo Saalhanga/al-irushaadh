@@ -10,7 +10,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // Hero
     'hero.title': 'Build the United Islamic Society Office Together',
-    'hero.subtitle': 'Join your community in building a space that serves everyone. Share 1 square foot and leave your mark.',
+    'hero.subtitle': 'Join our community in building a space that serves everyone. Share 1 square foot and leave your mark.',
     'hero.cta': 'Share 1 Square Foot – 1320 MVR',
 
     // Progress
