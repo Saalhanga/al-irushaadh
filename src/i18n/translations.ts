@@ -46,8 +46,8 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // Project page
     'project.title': 'Project Details',
-    'project.building.title': 'The UIS Office Building',
-    'project.building.desc': 'The proposed UIS office building is designed to be a modern, functional space that serves the diverse needs of the Muslim community. The building will house administrative offices, meeting rooms, and community service facilities.',
+    'project.building.title': 'The Al Irushaadh Office Building',
+    'project.building.desc': 'The proposed Al Irushaadh office building is designed to be a modern, functional space that serves the diverse needs of the Muslim community. The building will house administrative offices, meeting rooms, and community service facilities.',
     'project.purpose.title': 'Purpose of the Office',
     'project.purpose.item1': 'Administrative hub for Al Irushaadh',
     'project.purpose.item2': 'Community counseling and support services',
