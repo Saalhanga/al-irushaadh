@@ -9,7 +9,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'nav.admin': 'Admin',
 
     // Hero
-    'hero.title': 'Build the United Islamic Society Office Together',
+    'hero.title': 'Build the Al Irushaadh Office Together',
     'hero.subtitle': 'Join our community in building a space that serves everyone. Share 1 square foot and leave your mark.',
     'hero.cta': 'Share 1 Square Foot – 1320 MVR',
 
@@ -23,25 +23,25 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // About
     'about.title': 'About the Project',
-    'about.description': 'The United Islamic Society is building an office to serve as a hub for community services, education, and coordination. This office will strengthen the bonds of our community and provide essential services for generations to come.',
+    'about.description': 'Al Irushaadh is building an office to serve as a hub for community services, education, and coordination. This office will strengthen the bonds of our community and provide essential services for generations to come.',
     'about.why': 'Why This Matters',
-    'about.why.text': 'A dedicated office space enables the United Islamic Society to better serve the Muslim community through organized programs, counseling, educational initiatives, and administrative coordination.',
+    'about.why.text': 'A dedicated office space enables Al Irushaadh to better serve the Muslim community through organized programs, counseling, educational initiatives, and administrative coordination.',
 
     // Sponsor page
     'sponsor.title': 'Share a Square Foot',
-    'sponsor.subtitle': 'Each square foot costs 1320 MVR. Your share directly supports the construction of the UIS office.',
+    'sponsor.subtitle': 'Each square foot costs 1320 MVR. Your share directly supports the construction of the Al Irushaadh office.',
     'sponsor.price': '1,320 MVR',
     'sponsor.per': 'per square foot',
     'sponsor.bank.title': 'Bank Transfer Details',
     'sponsor.bank.name': 'Bank of Maldives (BML Islamic)',
     'sponsor.bank.account': 'Account Number',
     'sponsor.bank.holder': 'Account Name',
-    'sponsor.bank.holder.value': 'United Islamic Society',
-    'sponsor.bank.note': 'Please include "UIS Office 1320" as the transfer reference.',
+    'sponsor.bank.holder.value': 'Al Irushaadh',
+    'sponsor.bank.note': 'Please include "Al Irushaadh" as the transfer reference.',
     'sponsor.howto': 'How to Share',
     'sponsor.step1': 'Choose how many square feet you want to share',
     'sponsor.step2': 'Transfer the amount to the bank account above',
-    'sponsor.step3': 'Include "UIS Office 1320" as your reference',
+    'sponsor.step3': 'Include "Al Irushaadh" as your reference',
     'sponsor.step4': 'Your contribution will be reflected in the progress bar',
 
     // Project page
@@ -49,7 +49,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'project.building.title': 'The UIS Office Building',
     'project.building.desc': 'The proposed UIS office building is designed to be a modern, functional space that serves the diverse needs of the Muslim community. The building will house administrative offices, meeting rooms, and community service facilities.',
     'project.purpose.title': 'Purpose of the Office',
-    'project.purpose.item1': 'Administrative hub for the United Islamic Society',
+    'project.purpose.item1': 'Administrative hub for Al Irushaadh',
     'project.purpose.item2': 'Community counseling and support services',
     'project.purpose.item3': 'Educational program coordination',
     'project.purpose.item4': 'Event planning and community gathering space',
@@ -59,7 +59,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     'project.gallery.title': 'Building Design',
 
     // Footer
-    'footer.rights': '© 2026 United Islamic Society. All rights reserved.',
+    'footer.rights': '© 2026 Al Irushaadh. All rights reserved.',
     'footer.dua': 'May Allah reward your generosity.',
 
     // Common
