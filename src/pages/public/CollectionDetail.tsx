@@ -50,7 +50,7 @@ const CollectionDetail = () => {
               <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{collection.title}</h1>
               {collection.description && <p className="text-lg text-muted-foreground max-w-3xl mb-4">{collection.description}</p>}
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                {collection.item_count !== null && <span>{collection.item_count} items</span>}
+                {items.length > 0 && <span>{items.length} items</span>}
                 {collection.date_range && <span>{collection.date_range}</span>}
               </div>
             </div>

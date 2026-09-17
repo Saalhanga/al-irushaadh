@@ -37,7 +37,7 @@ const ContentDetail = () => {
   }, [sheikhContent, topicContent, id]);
 
   const handlePlay = () => {
-    trackPlay.mutate();
+    trackPlay.mutate(undefined);
   };
 
   const handleDownload = () => {

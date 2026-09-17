@@ -14,6 +14,50 @@ export type Database = {
   }
   public: {
     Tables: {
+      analytics: {
+        Row: {
+          browser: string | null
+          content_id: string | null
+          country: string | null
+          date_time: string
+          device_type: string | null
+          duration_seconds: number | null
+          event_type: string
+          id: string
+          referral: string | null
+        }
+        Insert: {
+          browser?: string | null
+          content_id?: string | null
+          country?: string | null
+          date_time?: string
+          device_type?: string | null
+          duration_seconds?: number | null
+          event_type: string
+          id?: string
+          referral?: string | null
+        }
+        Update: {
+          browser?: string | null
+          content_id?: string | null
+          country?: string | null
+          date_time?: string
+          device_type?: string | null
+          duration_seconds?: number | null
+          event_type?: string
+          id?: string
+          referral?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "analytics_content_id_fkey"
+            columns: ["content_id"]
+            isOneToOne: false
+            referencedRelation: "content"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       bank_accounts: {
         Row: {
           account_holder: string
@@ -44,6 +88,191 @@ export type Database = {
         }
         Relationships: []
       }
+      collection_items: {
+        Row: {
+          collection_id: string
+          content_id: string
+          created_at: string
+          id: string
+          sort_order: number
+        }
+        Insert: {
+          collection_id: string
+          content_id: string
+          created_at?: string
+          id?: string
+          sort_order?: number
+        }
+        Update: {
+          collection_id?: string
+          content_id?: string
+          created_at?: string
+          id?: string
+          sort_order?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "collection_items_collection_id_fkey"
+            columns: ["collection_id"]
+            isOneToOne: false
+            referencedRelation: "collections"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "collection_items_content_id_fkey"
+            columns: ["content_id"]
+            isOneToOne: false
+            referencedRelation: "content"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      collections: {
+        Row: {
+          cover_image: string | null
+          created_at: string
+          date_range: string | null
+          description: string | null
+          enabled: boolean
+          id: string
+          sheikh_id: string | null
+          sort_order: number
+          title: string
+          topic_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          cover_image?: string | null
+          created_at?: string
+          date_range?: string | null
+          description?: string | null
+          enabled?: boolean
+          id?: string
+          sheikh_id?: string | null
+          sort_order?: number
+          title: string
+          topic_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          cover_image?: string | null
+          created_at?: string
+          date_range?: string | null
+          description?: string | null
+          enabled?: boolean
+          id?: string
+          sheikh_id?: string | null
+          sort_order?: number
+          title?: string
+          topic_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "collections_sheikh_id_fkey"
+            columns: ["sheikh_id"]
+            isOneToOne: false
+            referencedRelation: "sheikhs"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "collections_topic_id_fkey"
+            columns: ["topic_id"]
+            isOneToOne: false
+            referencedRelation: "topics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      content: {
+        Row: {
+          added_at: string
+          created_at: string
+          date: string | null
+          description: string | null
+          duration: number | null
+          event: string | null
+          external_url: string | null
+          file_path: string | null
+          id: string
+          language: string
+          location: string | null
+          metadata: Json | null
+          page_count: number | null
+          publisher: string | null
+          sheikh_id: string | null
+          soft_deleted_at: string | null
+          source_platform: string | null
+          source_url: string | null
+          state: string
+          tags: string[] | null
+          title: string
+          topics: string[] | null
+          type: string
+          updated_at: string
+        }
+        Insert: {
+          added_at?: string
+          created_at?: string
+          date?: string | null
+          description?: string | null
+          duration?: number | null
+          event?: string | null
+          external_url?: string | null
+          file_path?: string | null
+          id?: string
+          language?: string
+          location?: string | null
+          metadata?: Json | null
+          page_count?: number | null
+          publisher?: string | null
+          sheikh_id?: string | null
+          soft_deleted_at?: string | null
+          source_platform?: string | null
+          source_url?: string | null
+          state?: string
+          tags?: string[] | null
+          title: string
+          topics?: string[] | null
+          type: string
+          updated_at?: string
+        }
+        Update: {
+          added_at?: string
+          created_at?: string
+          date?: string | null
+          description?: string | null
+          duration?: number | null
+          event?: string | null
+          external_url?: string | null
+          file_path?: string | null
+          id?: string
+          language?: string
+          location?: string | null
+          metadata?: Json | null
+          page_count?: number | null
+          publisher?: string | null
+          sheikh_id?: string | null
+          soft_deleted_at?: string | null
+          source_platform?: string | null
+          source_url?: string | null
+          state?: string
+          tags?: string[] | null
+          title?: string
+          topics?: string[] | null
+          type?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "content_sheikh_id_fkey"
+            columns: ["sheikh_id"]
+            isOneToOne: false
+            referencedRelation: "sheikhs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       donation_progress: {
         Row: {
           current_amount: number | null
@@ -71,6 +300,71 @@ export type Database = {
         }
         Relationships: []
       }
+      events: {
+        Row: {
+          created_at: string
+          date: string | null
+          description: string | null
+          id: string
+          location: string | null
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          date?: string | null
+          description?: string | null
+          id?: string
+          location?: string | null
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          date?: string | null
+          description?: string | null
+          id?: string
+          location?: string | null
+          name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      featured_items: {
+        Row: {
+          content_id: string
+          created_at: string
+          enabled: boolean
+          id: string
+          slot: string
+          sort_order: number
+        }
+        Insert: {
+          content_id: string
+          created_at?: string
+          enabled?: boolean
+          id?: string
+          slot?: string
+          sort_order?: number
+        }
+        Update: {
+          content_id?: string
+          created_at?: string
+          enabled?: boolean
+          id?: string
+          slot?: string
+          sort_order?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "featured_items_content_id_fkey"
+            columns: ["content_id"]
+            isOneToOne: false
+            referencedRelation: "content"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       project_images: {
         Row: {
           caption: string | null
@@ -92,6 +386,69 @@ export type Database = {
           id?: string
           sort_order?: number
           url?: string
+        }
+        Relationships: []
+      }
+      reviews: {
+        Row: {
+          created_at: string
+          id: string
+          item_id: string
+          item_type: string
+          notes: string | null
+          state: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          item_id: string
+          item_type: string
+          notes?: string | null
+          state?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          item_id?: string
+          item_type?: string
+          notes?: string | null
+          state?: string
+        }
+        Relationships: []
+      }
+      sheikhs: {
+        Row: {
+          created_at: string
+          id: string
+          languages: string[] | null
+          name: string
+          photo_url: string | null
+          short_bio: string | null
+          topics: string[] | null
+          updated_at: string
+          visibility: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          languages?: string[] | null
+          name: string
+          photo_url?: string | null
+          short_bio?: string | null
+          topics?: string[] | null
+          updated_at?: string
+          visibility?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          languages?: string[] | null
+          name?: string
+          photo_url?: string | null
+          short_bio?: string | null
+          topics?: string[] | null
+          updated_at?: string
+          visibility?: string
         }
         Relationships: []
       }
@@ -119,6 +476,98 @@ export type Database = {
           locale?: string
           updated_at?: string
           value?: string
+        }
+        Relationships: []
+      }
+      submissions: {
+        Row: {
+          contact_email: string | null
+          created_at: string
+          date: string | null
+          description: string | null
+          event: string | null
+          file_path: string | null
+          id: string
+          location: string | null
+          notes: string | null
+          reviewed_at: string | null
+          sheikh_id: string | null
+          state: string
+          title: string
+          type: string
+          url: string | null
+        }
+        Insert: {
+          contact_email?: string | null
+          created_at?: string
+          date?: string | null
+          description?: string | null
+          event?: string | null
+          file_path?: string | null
+          id?: string
+          location?: string | null
+          notes?: string | null
+          reviewed_at?: string | null
+          sheikh_id?: string | null
+          state?: string
+          title: string
+          type: string
+          url?: string | null
+        }
+        Update: {
+          contact_email?: string | null
+          created_at?: string
+          date?: string | null
+          description?: string | null
+          event?: string | null
+          file_path?: string | null
+          id?: string
+          location?: string | null
+          notes?: string | null
+          reviewed_at?: string | null
+          sheikh_id?: string | null
+          state?: string
+          title?: string
+          type?: string
+          url?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "submissions_sheikh_id_fkey"
+            columns: ["sheikh_id"]
+            isOneToOne: false
+            referencedRelation: "sheikhs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      topics: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          locale: string
+          name: string
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          locale?: string
+          name: string
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          locale?: string
+          name?: string
+          slug?: string
+          updated_at?: string
         }
         Relationships: []
       }

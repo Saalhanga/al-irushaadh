@@ -87,7 +87,7 @@ export const usePopularContent = () => {
   return useQuery({
     queryKey: queryKeys.content.popular(),
     queryFn: async () => {
-      const { data, error } = await supabase.from('content').select('*').is('soft_deleted_at', null).eq('state', 'published').order('view_count', { ascending: false }).limit(10);
+      const { data, error } = await supabase.from('content').select('*').is('soft_deleted_at', null).eq('state', 'published').order('added_at', { ascending: false }).limit(10);
       if (error) throw error;
       return data as Content[];
     },
@@ -98,7 +98,7 @@ export const useTrendingContent = () => {
   return useQuery({
     queryKey: queryKeys.content.trending(),
     queryFn: async () => {
-      const { data, error } = await supabase.from('content').select('*').is('soft_deleted_at', null).eq('state', 'published').order('play_count', { ascending: false }).limit(10);
+      const { data, error } = await supabase.from('content').select('*').is('soft_deleted_at', null).eq('state', 'published').order('added_at', { ascending: false }).limit(10);
       if (error) throw error;
       return data as Content[];
     },
@@ -120,7 +120,7 @@ export const useCreateContent = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (newContent: Partial<Content>) => {
-      const { data, error } = await supabase.from('content').insert(newContent).select().single();
+      const { data, error } = await supabase.from('content').insert(newContent as any).select().single();
       if (error) throw error;
       return data as Content;
     },
