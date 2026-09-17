@@ -1,14 +1,14 @@
 # Al Irushaadh
 
-💡 Lovable App Prompt: United Islamic Society Fundraising Platform
+💡 Lovable App Prompt: Al Irushaadh Fundraising Platform
 
 Mission Statement
 
-I want to build a multilingual fundraising website that helps the Muslim community contribute to the construction of the United Islamic Society office project. It should feel official, trustworthy, calm, and community-driven, while expressing dignity, transparency, and unity.
+I want to build a multilingual fundraising website that helps the Muslim community contribute to the construction of the Al Irushaadh office project. It should feel official, trustworthy, calm, and community-driven, while expressing dignity, transparency, and unity.
 
 Project Name
 
-UIS Office 1320
+Al Irushaadh
 
 Target Audience
 
@@ -27,9 +27,9 @@ The homepage should feel official and respectful — similar to an Islamic organ
 Layout flow:
 
  Hero section with the building image and a calm headline like
-“Build the United Islamic Society Office Together”
+“Build the Al Irushaadh Office Together”
 
- Main call-to-action: Sponsor 1 Square Foot – 1320 MVR
+  Main call-to-action: Sponsor 1 Square Foot
 
  Donation progress bar showing percentage completed
 
@@ -45,9 +45,9 @@ This is the core feature of the website.
 
 Function:
 
- Users can sponsor 1 square foot for 1320 MVR
+  Users can sponsor 1 square foot
 
- Show progress visually (for example: 320 / 1320 square feet completed)
+  Show progress visually (for example: 320 / total square feet completed)
 
  Clean donation card layout with clear price and purpose
 
@@ -175,7 +175,7 @@ Tone should sound official but warm.
 
 Examples:
 
- “Support the United Islamic Society Office Project”
+  “Support the Al Irushaadh Office Project”
 
  “Sponsor 1 Square Foot and be part of the community effort”
 

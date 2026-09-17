@@ -138,7 +138,7 @@ VALUES (320, 1320);
 
 -- Insert initial bank account
 INSERT INTO public.bank_accounts (bank_name, account_number, account_holder)
-VALUES ('Bank of Maldives (BML Islamic)', '7770000012345', 'United Islamic Society');
+VALUES ('Bank of Maldives (BML Islamic)', '7770000012345', 'Al Irushaadh');
 
 -- Storage bucket for project images
 INSERT INTO storage.buckets (id, name, public)
