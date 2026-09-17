@@ -19,10 +19,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const checkAdmin = async (userId: string) => {
     const { data } = await supabase
-      .from('user_roles')
+      .from('profiles')
       .select('role')
-      .eq('user_id', userId)
-      .eq('role', 'admin')
+      .eq('id', userId)
       .maybeSingle();
     setIsAdmin(!!data);
   };
@@ -30,7 +29,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     let mounted = true;
 
-    // Restore session first
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (!mounted) return;
       setUser(session?.user ?? null);
@@ -43,7 +41,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       }
     });
 
-    // Then listen for subsequent changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (_event, session) => {
         if (!mounted) return;
