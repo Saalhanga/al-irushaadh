@@ -7,9 +7,9 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { useAuth } from '@/hooks/use-auth';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { BarChart3 } from 'lucide-react';
+import { BarChart3, type LucideIcon } from 'lucide-react';
 
-const StatCard = ({ title, value, icon: Icon }: { title: string; value: number; icon: React.ComponentType<{ size?: number; className?: string }> }) => (
+const StatCard = ({ title, value, icon: Icon }: { title: string; value: number; icon: LucideIcon }) => (
   <Card>
     <CardHeader className="pb-2 flex flex-row items-center justify-between">
       <CardTitle className="text-sm font-medium text-muted-foreground">{title}</CardTitle>
