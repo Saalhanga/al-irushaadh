@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 
-const AdminLogin = ({ onLogin }: { onLogin: (email: string, password: string) => Promise<void> }) => {
+const AdminLogin = () => {
+  const navigate = useNavigate();
+  const { signIn } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -16,7 +19,8 @@ const AdminLogin = ({ onLogin }: { onLogin: (email: string, password: string) =>
     setLoading(true);
     setError("");
     try {
-      await onLogin(email, password);
+      await signIn(email, password);
+      navigate("/admin");
     } catch (err: any) {
       setError(err.message || "Login failed");
     } finally {

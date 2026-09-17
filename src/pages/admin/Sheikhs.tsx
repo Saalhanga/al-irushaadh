@@ -22,7 +22,7 @@ const emptyForm = () => ({
   short_bio: '',
   languages: '',
   topics: '',
-  visibility: 'visible' as const,
+  visibility: 'visible' as 'visible' | 'hidden',
 });
 
 const Sheikhs = () => {

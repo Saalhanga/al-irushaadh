@@ -51,7 +51,7 @@ const SubmitContent = () => {
         ...formData,
         sheikh_id: formData.sheikh_id || null,
         state: 'needs_review',
-      });
+      } as any);
       setSubmitted(true);
       toast.success(t('submission.success'));
     } catch {

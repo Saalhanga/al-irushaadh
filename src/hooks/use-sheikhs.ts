@@ -45,7 +45,7 @@ export const useCreateSheikh = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (sheikh: Partial<Sheikh>) => {
-      const { data, error } = await supabase.from('sheikhs').insert(sheikh).select().single();
+      const { data, error } = await supabase.from('sheikhs').insert(sheikh as any).select().single();
       if (error) throw error;
       return data as Sheikh;
     },
@@ -109,7 +109,7 @@ export const useCreateTopic = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (topic: Partial<Topic>) => {
-      const { data, error } = await supabase.from('topics').insert(topic).select().single();
+      const { data, error } = await supabase.from('topics').insert(topic as any).select().single();
       if (error) throw error;
       return data as Topic;
     },
@@ -173,7 +173,7 @@ export const useCreateCollection = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (collection: Partial<Collection>) => {
-      const { data, error } = await supabase.from('collections').insert(collection).select().single();
+      const { data, error } = await supabase.from('collections').insert(collection as any).select().single();
       if (error) throw error;
       return data as Collection;
     },
@@ -229,7 +229,7 @@ export const useSubmissions = (state?: string) => {
 export const useCreateSubmission = () => {
   return useMutation({
     mutationFn: async (submission: Partial<Submission>) => {
-      const { data, error } = await supabase.from('submissions').insert(submission).select().single();
+      const { data, error } = await supabase.from('submissions').insert(submission as any).select().single();
       if (error) throw error;
       return data as Submission;
     },
@@ -281,7 +281,7 @@ export const useCreateFeaturedItem = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (item: Partial<FeaturedItem>) => {
-      const { data, error } = await supabase.from('featured_items').insert(item).select().single();
+      const { data, error } = await supabase.from('featured_items').insert(item as any).select().single();
       if (error) throw error;
       return data as FeaturedItem;
     },

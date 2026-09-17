@@ -120,7 +120,7 @@ export const useCreateContent = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (newContent: Partial<Content>) => {
-      const { data, error } = await supabase.from('content').insert(newContent).select().single();
+      const { data, error } = await supabase.from('content').insert(newContent as any).select().single();
       if (error) throw error;
       return data as Content;
     },
