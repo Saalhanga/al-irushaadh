@@ -7,452 +7,148 @@ export type Json =
   | Json[]
 
 export type Database = {
+  // Allows to automatically instantiate createClient with right options
+  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "14.5"
   }
   public: {
     Tables: {
-      profiles: {
+      bank_accounts: {
         Row: {
-          id: string
-          role: string
+          account_holder: string
+          account_number: string
+          bank_name: string
           created_at: string
-        }
-        Insert: {
           id: string
-          role?: string
-          created_at?: string
-        }
-        Update: {
-          role?: string
-        }
-        Relationships: []
-      }
-      sheikhs: {
-        Row: {
-          id: string
-          name: string
-          photo_url: string | null
-          short_bio: string
-          languages: string[]
-          topics: string[]
-          visibility: string
-          created_at: string
+          is_active: boolean
           updated_at: string
         }
         Insert: {
-          id?: string
-          name: string
-          photo_url?: string | null
-          short_bio?: string
-          languages?: string[]
-          topics?: string[]
-          visibility?: string
+          account_holder?: string
+          account_number?: string
+          bank_name?: string
           created_at?: string
+          id?: string
+          is_active?: boolean
           updated_at?: string
         }
         Update: {
-          name?: string
-          photo_url?: string | null
-          short_bio?: string
-          languages?: string[]
-          topics?: string[]
-          visibility?: string
+          account_holder?: string
+          account_number?: string
+          bank_name?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
           updated_at?: string
         }
         Relationships: []
       }
-      topics: {
+      donation_progress: {
         Row: {
+          current_amount: number | null
+          current_sqft: number
           id: string
-          name: string
-          slug: string
+          total_amount: number | null
+          total_sqft: number
+          updated_at: string
+        }
+        Insert: {
+          current_amount?: number | null
+          current_sqft?: number
+          id?: string
+          total_amount?: number | null
+          total_sqft?: number
+          updated_at?: string
+        }
+        Update: {
+          current_amount?: number | null
+          current_sqft?: number
+          id?: string
+          total_amount?: number | null
+          total_sqft?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      project_images: {
+        Row: {
+          caption: string | null
+          created_at: string
+          id: string
+          sort_order: number
+          url: string
+        }
+        Insert: {
+          caption?: string | null
+          created_at?: string
+          id?: string
+          sort_order?: number
+          url: string
+        }
+        Update: {
+          caption?: string | null
+          created_at?: string
+          id?: string
+          sort_order?: number
+          url?: string
+        }
+        Relationships: []
+      }
+      site_content: {
+        Row: {
+          created_at: string
+          id: string
+          key: string
           locale: string
-          description: string | null
-          created_at: string
           updated_at: string
+          value: string
         }
         Insert: {
+          created_at?: string
           id?: string
-          name: string
-          slug: string
+          key: string
+          locale: string
+          updated_at?: string
+          value?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          key?: string
           locale?: string
-          description?: string | null
-          created_at?: string
           updated_at?: string
-        }
-        Update: {
-          name?: string
-          slug?: string
-          locale?: string
-          description?: string | null
-          updated_at?: string
+          value?: string
         }
         Relationships: []
       }
-      events: {
+      user_roles: {
         Row: {
           id: string
-          name: string
-          date: string | null
-          location: string | null
-          description: string | null
-          created_at: string
-          updated_at: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
         }
         Insert: {
           id?: string
-          name: string
-          date?: string | null
-          location?: string | null
-          description?: string | null
-          created_at?: string
-          updated_at?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
         }
         Update: {
-          name?: string
-          date?: string | null
-          location?: string | null
-          description?: string | null
-          updated_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
         }
         Relationships: []
-      }
-      content: {
-        Row: {
-          added_at: string
-          created_at: string
-          date: string | null
-          description: string
-          duration: number | null
-          event: string | null
-          external_url: string | null
-          file_path: string | null
-          id: string
-          language: string
-          metadata: Json
-          page_count: number | null
-          publisher: string | null
-          sheikh_id: string | null
-          soft_deleted_at: string | null
-          source_platform: string | null
-          source_url: string | null
-          state: string
-          tags: string[]
-          title: string
-          topics: string[]
-          type: string
-          updated_at: string
-        }
-        Insert: {
-          added_at?: string
-          created_at?: string
-          date?: string | null
-          description?: string
-          duration?: number | null
-          event?: string | null
-          external_url?: string | null
-          file_path?: string | null
-          id?: string
-          language?: string
-          metadata?: Json
-          page_count?: number | null
-          publisher?: string | null
-          sheikh_id?: string | null
-          soft_deleted_at?: string | null
-          source_platform?: string | null
-          source_url?: string | null
-          state?: string
-          tags?: string[]
-          title: string
-          topics?: string[]
-          type: string
-          updated_at?: string
-        }
-        Update: {
-          added_at?: string
-          date?: string | null
-          description?: string
-          duration?: number | null
-          event?: string | null
-          external_url?: string | null
-          file_path?: string | null
-          language?: string
-          metadata?: Json
-          page_count?: number | null
-          publisher?: string | null
-          sheikh_id?: string | null
-          soft_deleted_at?: string | null
-          source_platform?: string | null
-          source_url?: string | null
-          state?: string
-          tags?: string[]
-          title?: string
-          topics?: string[]
-          type?: string
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "content_sheikh_id_fkey"
-            columns: ["sheikh_id"]
-            referencedRelation: "sheikhs"
-            referencedColumns: ["id"]
-          }
-        ]
-      }
-      collections: {
-        Row: {
-          cover_image: string | null
-          created_at: string
-          date_range: string | null
-          description: string
-          enabled: boolean
-          id: string
-          sheikh_id: string | null
-          sort_order: number
-          title: string
-          topic_id: string | null
-          updated_at: string
-        }
-        Insert: {
-          cover_image?: string | null
-          created_at?: string
-          date_range?: string | null
-          description?: string
-          enabled?: boolean
-          id?: string
-          sheikh_id?: string | null
-          sort_order?: number
-          title: string
-          topic_id?: string | null
-          updated_at?: string
-        }
-        Update: {
-          cover_image?: string | null
-          date_range?: string | null
-          description?: string
-          enabled?: boolean
-          sheikh_id?: string | null
-          sort_order?: number
-          title?: string
-          topic_id?: string | null
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "collections_sheikh_id_fkey"
-            columns: ["sheikh_id"]
-            referencedRelation: "sheikhs"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "collections_topic_id_fkey"
-            columns: ["topic_id"]
-            referencedRelation: "topics"
-            referencedColumns: ["id"]
-          }
-        ]
-      }
-      collection_items: {
-        Row: {
-          collection_id: string
-          content_id: string
-          created_at: string
-          id: string
-          sort_order: number
-        }
-        Insert: {
-          collection_id: string
-          content_id: string
-          created_at?: string
-          id?: string
-          sort_order?: number
-        }
-        Update: {
-          collection_id?: string
-          content_id?: string
-          sort_order?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "collection_items_collection_id_fkey"
-            columns: ["collection_id"]
-            referencedRelation: "collections"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "collection_items_content_id_fkey"
-            columns: ["content_id"]
-            referencedRelation: "content"
-            referencedColumns: ["id"]
-          }
-        ]
-      }
-      submissions: {
-        Row: {
-          contact_email: string | null
-          created_at: string
-          date: string | null
-          description: string
-          event: string | null
-          file_path: string | null
-          id: string
-          location: string | null
-          notes: string | null
-          reviewed_at: string | null
-          sheikh_id: string | null
-          state: string
-          title: string
-          type: string
-          url: string | null
-        }
-        Insert: {
-          contact_email?: string | null
-          created_at?: string
-          date?: string | null
-          description?: string
-          event?: string | null
-          file_path?: string | null
-          id?: string
-          location?: string | null
-          notes?: string | null
-          reviewed_at?: string | null
-          sheikh_id?: string | null
-          state?: string
-          title: string
-          type: string
-          url?: string | null
-        }
-        Update: {
-          contact_email?: string | null
-          date?: string | null
-          description?: string
-          event?: string | null
-          file_path?: string | null
-          location?: string | null
-          notes?: string | null
-          reviewed_at?: string | null
-          sheikh_id?: string | null
-          state?: string
-          title?: string
-          type?: string
-          url?: string | null
-        }
-        Relationships: []
-      }
-      reviews: {
-        Row: {
-          created_at: string
-          id: string
-          item_id: string
-          item_type: string
-          notes: string | null
-          state: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          item_id: string
-          item_type: string
-          notes?: string | null
-          state?: string
-        }
-        Update: {
-          item_id?: string
-          item_type?: string
-          notes?: string | null
-          state?: string
-        }
-        Relationships: []
-      }
-      featured_items: {
-        Row: {
-          content_id: string
-          created_at: string
-          enabled: boolean
-          id: string
-          slot: string
-          sort_order: number
-        }
-        Insert: {
-          content_id: string
-          created_at?: string
-          enabled?: boolean
-          id?: string
-          slot?: string
-          sort_order?: number
-        }
-        Update: {
-          content_id?: string
-          enabled?: boolean
-          slot?: string
-          sort_order?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "featured_items_content_id_fkey"
-            columns: ["content_id"]
-            referencedRelation: "content"
-            referencedColumns: ["id"]
-          }
-        ]
-      }
-      analytics: {
-        Row: {
-          browser: string | null
-          content_id: string | null
-          country: string | null
-          date_time: string
-          device_type: string | null
-          duration_seconds: number | null
-          event_type: string
-          id: string
-          referral: string | null
-        }
-        Insert: {
-          browser?: string | null
-          content_id?: string | null
-          country?: string | null
-          date_time?: string
-          device_type?: string | null
-          duration_seconds?: number | null
-          event_type: string
-          id?: string
-          referral?: string | null
-        }
-        Update: {
-          browser?: string | null
-          content_id?: string | null
-          country?: string | null
-          date_time?: string
-          device_type?: string | null
-          duration_seconds?: number | null
-          event_type?: string
-          referral?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "analytics_content_id_fkey"
-            columns: ["content_id"]
-            referencedRelation: "content"
-            referencedColumns: ["id"]
-          }
-        ]
       }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      update_updated_at_column: {
-        Args: {}
-        Returns: trigger
-      }
       has_role: {
         Args: {
-          _user_id: uuid
-          _role: app_role
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
         }
         Returns: boolean
       }
@@ -468,18 +164,18 @@ export type Database = {
 
 type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">
 
-type DefaultSchema = DatabaseWithoutInternals[Extract<keyof DatabaseWithoutInternals, "public">]
+type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, "public">]
 
 export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -503,11 +199,11 @@ export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -528,11 +224,11 @@ export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -553,34 +249,34 @@ export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+  EnumName extends (DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
-    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Enums"]
-    : never = never,
+    ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
+    : never) = never,
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
-  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Enums"][EnumName]
+  ? DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
   : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"]
     ? DefaultSchema["Enums"][DefaultSchemaEnumNameOrOptions]
     : never
 
 export type CompositeTypes<
-  DefaultSchemaCompositeTypeNameOrOptions extends
+  PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
-  CompositeTypeName extends DefaultSchemaCompositeTypeNameOrOptions extends {
+  CompositeTypeName extends (PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
-    ? keyof DatabaseWithoutInternals[DefaultSchemaCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
-    : never = never,
-> = DefaultSchemaCompositeTypeNameOrOptions extends {
+    ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
+    : never) = never,
+> = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
-  ? DatabaseWithoutInternals[DefaultSchemaCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
-  : DefaultSchemaCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"]
-    ? DefaultSchema["CompositeTypes"][DefaultSchemaCompositeTypeNameOrOptions]
+  ? DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
+  : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"]
+    ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
     : never
 
 export const Constants = {
