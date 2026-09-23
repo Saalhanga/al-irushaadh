@@ -19,10 +19,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const checkAdmin = async (userId: string) => {
     const { data } = await supabase
-      .from('user_roles')
+      .from('profiles')
       .select('role')
-      .eq('user_id', userId);
-    setIsAdmin(!!data?.some((r: any) => r.role === 'admin'));
+      .eq('id', userId)
+      .single();
+    setIsAdmin(data?.role === 'admin');
   };
 
   useEffect(() => {
@@ -81,3 +82,4 @@ export const useAuth = () => {
   if (!context) throw new Error('useAuth must be used within AuthProvider');
   return context;
 };
+
