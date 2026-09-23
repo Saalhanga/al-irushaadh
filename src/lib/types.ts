@@ -62,9 +62,12 @@ export interface Collection {
   title: string;
   description: string | null;
   cover_image: string | null;
-  item_count: number | null;
+  sheikh_id: string | null;
+  topic_id: string | null;
+  item_count?: number | null;
   date_range: string | null;
   sort_order: number;
+  enabled: boolean;
   created_at: string;
   updated_at: string;
 }

@@ -19,11 +19,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const checkAdmin = async (userId: string) => {
     const { data } = await supabase
-      .from('profiles')
+      .from('user_roles')
       .select('role')
-      .eq('id', userId)
-      .maybeSingle();
-    setIsAdmin(!!data);
+      .eq('user_id', userId);
+    setIsAdmin(!!data?.some((r: any) => r.role === 'admin'));
   };
 
   useEffect(() => {

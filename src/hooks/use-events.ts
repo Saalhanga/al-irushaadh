@@ -18,7 +18,7 @@ export const useCreateEvent = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (event: Partial<Event>) => {
-      const { data, error } = await supabase.from('events').insert(event).select().single();
+      const { data, error } = await supabase.from('events').insert(event as any).select().single();
       if (error) throw error;
       return data as Event;
     },

@@ -3,7 +3,7 @@ import { Play, FileText, Image as ImageIcon, FileQuestion, BookOpen, MessageCirc
 import { useLanguage } from '@/i18n/LanguageContext';
 import { formatDuration, formatDate, getContentTypeLabel, cn } from '@/lib/utils';
 import type { Content } from '@/lib/types';
-import ShareMenu from './ShareMenu';
+import ShareMenu from '@/components/ShareMenu';
 
 interface ContentCardProps {
   content: Content;
