@@ -86,7 +86,7 @@ const AdminLayout = () => {
         </SheetContent>
       </Sheet>
 
-      <main className="flex-1 md:ml-64">
+      <main className="flex-1">
         <div className="p-6">
           <Outlet />
         </div>
