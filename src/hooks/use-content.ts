@@ -247,12 +247,15 @@ export const useSearch = (query: string) => {
   return useQuery({
     queryKey: queryKeys.search.results(query),
     queryFn: async () => {
-      if (!query.trim()) return { archive: [], external: [] };
-      const { data, error } = await supabase.from('content').select('*').or(`title.ilike.%${query}%,description.ilike.%${query}%`).is('soft_deleted_at', null).eq('state', 'published').limit(20);
+      if (!query.trim()) {
+        const { data, error } = await supabase.from('content').select('*').is('soft_deleted_at', null).eq('state', 'published').order('added_at', { ascending: false }).limit(20);
+        if (error) throw error;
+        return { archive: data || [], external: [] };
+      }
+      const { data, error } = await supabase.from('content').select('*').or(`title.ilike.%` + query + `%,description.ilike.%` + query + `%`).is('soft_deleted_at', null).eq('state', 'published').limit(20);
       if (error) throw error;
       return { archive: data || [], external: [] };
     },
-    enabled: query.trim().length > 0,
   });
 };
 
